@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mikael Goes | Arq. e Interiores</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: #111; /* Fundo escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #intro {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeInOut 4s ease forwards;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+</style>
+</head>
+<body>
+
+<div id="intro">Mikael Goes | Arq. e Interiores</div>
+
+<script>
+  // Após 4 segundos, remove a introdução para mostrar o conteúdo principal
+  setTimeout(() => {
+    document.getElementById('intro').style.display = 'none';
+    // Aqui você pode mostrar o conteúdo do site depois da abertura
+  }, 4000);
+</script>
+
+</body>
+</html>
