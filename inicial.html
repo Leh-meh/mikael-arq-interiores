@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mikael Goes | Página Inicial</title>
+  <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff3df; /* mesma cor da abertura */
+      transition: 2s;
+    }
+
+    #logo {
+      width: 70px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+
+    main {
+        margin: 70px;
+      padding: 100px 40px 40px 40px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #000;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 10px;
+      color: #333;
+    }
+
+    /* Estilo do texto que digita */
+    .typing-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.8em;
+      color: #000;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid #000;
+      width: max-content;
+      animation: blink-caret 1s step-end infinite;
+      margin-top: 8px;
+      text-transform: capitalize;
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: black; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="interface"> 
+    <div class="logo">
+      <img id="logo" src="img/logoc.png" alt="Logo de Mikael Goes">
+    </div> <!--logo-->
+
+    <div class="menu-nav">
+      <nav class="menu-desktop">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Especialidades</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Projetos</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-contato">
+        <a href="#">
+          <button>Contato</button>
+        </a>
+      </div>
+    </div> <!--botão-->
+  </div> <!--interface-->
+</header>
+<main>
+  <h1>Olá, eu sou mikael goes</h1>
+  <div class="typing-text" id="typing"></div>
+</main>
+
+<script>
+  const words = ["arquiteto", "design de interiores"];
+  const typingElement = document.getElementById('typing');
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let typingSpeed = 150;
+  let deletingSpeed = 100;
+  let pauseBetweenWords = 1500;
+  let isDeleting = false;
+
+  function type() {
+    const currentWord = words[wordIndex];
+    if (!isDeleting) {
+      typingElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, pauseBetweenWords);
+      } else {
+        setTimeout(type, typingSpeed);
+      }
+    } else {
+      typingElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(type, deletingSpeed);
+      }
+    }
+  }
+
+  type();
+</script>
+
+</body>
+</html>

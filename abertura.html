@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mikael Goes | Arq. e Interiores</title>
-<link rel="x-icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
-<style>
-  body, html {
-    margin: 0; padding: 0;
-    height: 100%;
-    background: #111; /* Fundo escuro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mikael Goes | Abertura</title>
+  <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  #intro {
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    font-size: 3rem;
-    opacity: 0;
-    animation: fadeInOut 4s ease forwards;
-  }
+    body {
+      height: 100vh;
+      background-color: #997453; /* COR DE FUNDO FIXA */
+      font-family: 'Arial', sans-serif;
+    }
 
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(20px); }
-    20% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-20px); }
-  }
-</style>
+    #intro {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #logo {
+      width: 200px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards, moveLogo 2s ease 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes moveLogo {
+      to {
+        width: 70px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div id="intro">Mikael Goes | Arq. e Interiores</div>
+  <div id="intro">
+    <img id="logo" src="img/logoc.png" alt="Logo de Mikael Goes">
+  </div>
 
-<script>
-  // Após 4 segundos, remove a introdução para mostrar o conteúdo principal
-  setTimeout(() => {
-    document.getElementById('intro').style.display = 'none';
-    // Aqui você pode mostrar o conteúdo do site depois da abertura
-  }, 4000);
-</script>
+  <script>
+    setTimeout(() => {
+      window.location.href = "inicial.html";
+    }, 4000); // redireciona depois da animação
+  </script>
 
 </body>
 </html>
