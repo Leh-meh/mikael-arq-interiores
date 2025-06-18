@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mikael Goes | Página Inicial</title>
   <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css">
+  <!--link fonte-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!--fim link fonte-->
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #fff3df; /* mesma cor da abertura */
+      background-color: #fff3df;
+      /* mesma cor da abertura */
       transition: 2s;
     }
 
@@ -23,7 +32,7 @@
     }
 
     main {
-        margin: 70px;
+      margin: 70px;
       padding: 100px 40px 40px 40px;
     }
 
@@ -53,80 +62,97 @@
     }
 
     @keyframes blink-caret {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: black; }
+
+      0%,
+      100% {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: black;
+      }
     }
   </style>
 </head>
+
 <body>
-<header>
-  <div class="interface"> 
-    <div class="logo">
-      <img id="logo" src="img/logoc.png" alt="Logo de Mikael Goes">
-    </div> <!--logo-->
+  <header>
+    <div class="interface">
+      <div class="logo">
+        <img id="logo" src="img/logoc.png" alt="Logo de Mikael Goes">
+      </div> <!--logo-->
 
-    <div class="menu-nav">
-      <nav class="menu-desktop">
-        <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Especialidades</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Projetos</a></li>
-        </ul>
-      </nav>
+      <div class="menu-nav">
+        <nav class="menu-desktop">
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Especialidades</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Projetos</a></li>
+          </ul>
+        </nav>
 
-      <div class="btn-contato">
-        <a href="#">
-          <button>Contato</button>
-        </a>
-      </div>
-    </div> <!--botão-->
-  </div> <!--interface-->
-</header>
-<main>
-  <h1>Olá, eu sou mikael goes</h1>
-  <div class="typing-text" id="typing"></div>
+        <div class="btn-contato">
+          <a href="#">
+            <button>Contato</button>
+          </a>
+        </div>
+      </div> <!--botão-->
+    </div> <!--interface-->
+  </header>
+ <main>
+  <div class="apresentacao">
+    <div class="texto">
+      <h1>Olá, eu sou <span>Mikael Goes</span></h1>
+      <div class="typing-text" id="typing"></div>
+    </div>
+    
+    <div class="img-sobre">
+      <img src="img/perfil.jpeg" alt="foto-sobre" width="350px">
+    </div><!--img-sobre-->
+  </div>
 </main>
 
-<script>
-  const words = ["arquiteto", "design de interiores"];
-  const typingElement = document.getElementById('typing');
+  <script>
+    const words = ["arquiteto", "design de interiores"];
+    const typingElement = document.getElementById('typing');
 
-  let wordIndex = 0;
-  let charIndex = 0;
-  let typingSpeed = 150;
-  let deletingSpeed = 100;
-  let pauseBetweenWords = 1500;
-  let isDeleting = false;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typingSpeed = 150;
+    let deletingSpeed = 100;
+    let pauseBetweenWords = 1500;
+    let isDeleting = false;
 
-  function type() {
-    const currentWord = words[wordIndex];
-    if (!isDeleting) {
-      typingElement.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
+    function type() {
+      const currentWord = words[wordIndex];
+      if (!isDeleting) {
+        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
 
-      if (charIndex === currentWord.length) {
-        isDeleting = true;
-        setTimeout(type, pauseBetweenWords);
+        if (charIndex === currentWord.length) {
+          isDeleting = true;
+          setTimeout(type, pauseBetweenWords);
+        } else {
+          setTimeout(type, typingSpeed);
+        }
       } else {
-        setTimeout(type, typingSpeed);
-      }
-    } else {
-      typingElement.textContent = currentWord.substring(0, charIndex - 1);
-      charIndex--;
+        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
 
-      if (charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(type, typingSpeed);
-      } else {
-        setTimeout(type, deletingSpeed);
+        if (charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, typingSpeed);
+        } else {
+          setTimeout(type, deletingSpeed);
+        }
       }
     }
-  }
 
-  type();
-</script>
+    type();
+  </script>
 
 </body>
+
 </html>
