@@ -1,135 +1,124 @@
+:root {
+  --main-color: #997D60;
+  --black: #13131a;
+  --bg: #cfc1b2;
+  --border: 0.1rem solid rgba(15, 15, 15, 0.3);
+  font-size: 10px;
+}
 
 /* ESTILO GERAL*/
 * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-     font-family: "Urbanist", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  /*linhas de baixo do link*/
+  text-transform: capitalize;
+  /*os textos vão começar com letras maiúsculas*/
+  transition: 0.2s linear;
 }
-.interface {
-    max-width: 1280px;
-    margin: 0 auto;
+
+body {
+  background-color: var(--bg);
 }
+ /*CABEÇALHO*/
+section {
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99;
+  border-bottom: var(--border);
+  background-color: var(--bg);
+}
+
+.header section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.nav a {
+  margin: 2rem;
+  font-size: 1.5rem;
+  color: #2C2C2C;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav a:hover {
+  color: var(--main-color);
+  border-bottom: 0.1rem solid var(--main-color);
+  padding-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
 .btn-contato button{
-    padding: 10px 40px;
-    font-size: 18px;
-    font-size: 600;
-    background-color: #9b7861;
+    padding: 5px 10px;
+    font-size: 15px;
+    background-color: #997D60;
     border: 0;
-    border-radius: 10px;
+    border-radius: 30px;
     cursor: pointer;
     transition: .2s;
 }
 
 button:hover ,.btn-enviar input:hover {
-    box-shadow: 0px 0px 10px #CC9C76;
+    box-shadow: 0px 0px 10px #43372b9a;
     transform: scale(1.05);
 }
 
-.menu-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+/*CONTEUDO*/
+
+.home-container {
+  position: relative;
+  background: url("img/fundo-site.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-
-/* ESTILO DO CABEÇALHO */
-
-header {
-  position: fixed;
+ .overlay { /*sombra*/
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff3df; /* ou a cor que você quiser */
-  transition: box-shadow 0.3s ease;
-  z-index: 1000;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.596); /* sombra preta com transparência */
+  z-index: 1;
 }
 
-header {
-     padding: 40px 4%; 
-    
-}
-
-header > .interface {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header a{
-    color: rgba(107, 106, 106, 0.993);
-    text-decoration: none;
-    display: inline-block; /*mesma linha do link*/
-    transition: .2s;
-}
-
-header a:hover {
-    color: #663B21;
-    transform: scale(1.05);
-}
-
-header nav ul {
-    list-style-type:none; /*remover marcadores da lista*/
-}
-
-header nav ul li{
-    display: inline-block;
-    padding: 0 40px;
-}
-
-.logo {
-  margin-left: 40px;
-}
-
-/*CONTEÚDO*/
-
-.texto {
-    margin-top: -50px; /* Ajuste o valor conforme necessário */
-    /* Mantenha outros estilos que você possa ter para .texto */
-}
-
-h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: 50px;
-    font-weight: 650;
-    color: black;
-    /* Remover ou não ter margin-top aqui se usar no .texto */
-}
- main {
-    padding-top: 20px; /* Reduza este valor se ele já existir, ou adicione um valor menor */
-    /* OU */
-    margin-top: -50px; /* Adicione uma margem negativa */
-}
-
-
- /* ESTILO DO SOBRE */
-
-.apresentacao {
+.home-container section {
+  position: relative;
+  z-index: 2; /* texto fica por cima da sombra */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  min-height: 100vh;
+} 
+.content {
+  max-width: 60rem;
 }
 
-.texto {
-  flex: 1;
+.content h3 {
+  color: #D6D1DF; 
+  font-size: 30px;
+
 }
 
-.img-sobre {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.content p {
+  color:#C6BCBF ;
+  font-size: 15px;
+  font-weight: 400; /*grossura das palavras*/
+  line-height: 1.8; /*Altura da linha*/
+  padding: 1rem 0;
 }
-
-.img-sobre img {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-
- 
