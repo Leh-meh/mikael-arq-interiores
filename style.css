@@ -3,7 +3,9 @@
   --black: #13131a;
   --bg: #cfc1b2;
   --border: 0.1rem solid rgba(15, 15, 15, 0.3);
+  --title: #43372B;
   font-size: 10px;
+
 }
 
 /* ESTILO GERAL*/
@@ -88,13 +90,13 @@ button:hover ,.btn-enviar input:hover {
   background-position: center;
 }
 
- .overlay { /*sombra*/
+ .sombra { /*sombra*/
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.596); /* sombra preta com transparência */
+  background-color: rgba(0, 0, 0, 0.336); /* sombra preta com transparência */
   z-index: 1;
 }
 
@@ -122,3 +124,240 @@ button:hover ,.btn-enviar input:hover {
   line-height: 1.8; /*Altura da linha*/
   padding: 1rem 0;
 }
+
+/*CONTEUDO SOBRE*/
+
+.title{
+  font-size: 4rem;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase; /*letra tudo maiúscula*/
+ 
+}
+.title span {
+  color: var(--title);
+  text-transform: uppercase; /*letra tudo maiúscula*/
+}
+
+.about .row {
+  padding: 30px;
+  max-width: 900px;  /* largura máxima do retângulo */
+   margin: 40px auto; /* centraliza horizontalmente e dá margem vertical */
+   align-items: center;
+  display: flex;
+  background-color: var(--main-color);
+  gap: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 10px rgba(128, 92, 63, 0.363);
+}
+
+  .about .row .content-about {
+    padding: 2rem;
+    box-shadow: 0 0 40px 10px rgba(128, 92, 63, 0.24);
+  }
+
+  .about .row .content-about h3 {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+   .about .row .content-about p {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 1.6; /*distância entre linhas*/
+  }
+
+  /*PROJETOS*/
+
+ section.portifolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px rgba(104, 59, 22, 0.288);
+}
+
+section.portifolio .flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    overflow-x: auto; /* rolagem lateral se não couber */
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory; /* opcional: carrossel suave */
+}
+
+.img-port {
+    width: 38rem;
+    height: 30rem;
+    background-size: cover;
+    background-position: 0% 0%; /* começa da esquerda */
+    transition: background-position 10s ease;
+    border-radius: 15px;
+    position: relative;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.img-port:hover {
+    background-position: 100% 0%; /* vai para a direita no hover */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0c0c0c94;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600; /* corrigido */
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.img-port:hover .overlay {
+    opacity: 1;
+}
+
+
+/*CELULAR*/
+@media (max-width: 768px) {
+  .header section {
+    flex-direction: row; /* mantém em linha */
+    justify-content: space-between; /* espaço entre logo e nav */
+    gap: 1rem; /* reduz gap para caber */
+    padding: 1rem;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: nowrap; /* para não quebrar linha */
+    overflow-x: auto; /* permite scroll horizontal se necessário */
+  }
+
+  .nav a {
+    margin: 0 10px; /* margem menor para caber */
+    font-size: 1.4rem;
+    white-space: nowrap; /* evita quebrar o texto em linha */
+  }
+
+  /* Ajuste para o botão contato ficar ao lado também */
+  .btn-contato {
+    margin-left: auto; /* empurra o botão para o fim */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container section {
+    padding: 2rem 1rem; /* espaço interno para não ficar grudado */
+  }
+  
+  .content {
+    max-width: 100%; /* ocupar a largura disponível */
+    padding: 0 1rem; /* margem interna nas laterais */
+  }
+
+  .content h3 {
+    font-size: 1.8rem; /* reduz para caber melhor */
+  }
+
+  .content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: row; /* mantém lado a lado */
+    flex-wrap: nowrap; /* não quebra linha */
+    max-width: 100%;
+    padding: 1rem;
+    gap: 1rem; /* espaço entre imagem e texto */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about .row .container-img {
+    flex: 0 0 35%; /* a imagem ocupa 35% da largura */
+  }
+
+  .about .row .container-img img {
+    width: 100%; /* a imagem preenche o container dela */
+    height: auto;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .about .row .content-about {
+    flex: 1; /* texto ocupa o restante do espaço */
+    padding: 0;
+  }
+
+  .about .row .content-about h3 {
+    font-size: 1.8rem;
+  }
+
+  .about .row .content-about p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: column;
+    padding: 20px;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .about .row .container-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about .row .content-about {
+    box-shadow: none;
+    padding: 1rem;
+  }
+
+  .nav a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+
+  .content h3 {
+    font-size: 1.8rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .btn-contato button {
+    padding: 8px 20px;
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .img-port {
+    width: 80vw;
+    height: 200px;
+  }
+}
+
+
