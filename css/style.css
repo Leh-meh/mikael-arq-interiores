@@ -85,7 +85,7 @@ button:hover ,.btn-enviar input:hover {
 
 .home-container {
   position: relative;
-  background: url("img/fundo-site.jpg");
+  background: url("../img/fundo-site.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -222,141 +222,104 @@ section.portifolio .flex {
 }
 
 
-/*CELULAR*/
-@media (max-width: 768px) {
-  .header section {
-    flex-direction: row; /* mantém em linha */
-    justify-content: space-between; /* espaço entre logo e nav */
-    gap: 1rem; /* reduz gap para caber */
-    padding: 1rem;
-  }
+/*FOOTER*/
 
-  .nav {
-    display: flex;
-    flex-wrap: nowrap; /* para não quebrar linha */
-    overflow-x: auto; /* permite scroll horizontal se necessário */
-  }
-
-  .nav a {
-    margin: 0 10px; /* margem menor para caber */
-    font-size: 1.4rem;
-    white-space: nowrap; /* evita quebrar o texto em linha */
-  }
-
-  /* Ajuste para o botão contato ficar ao lado também */
-  .btn-contato {
-    margin-left: auto; /* empurra o botão para o fim */
-  }
+footer {
+  background-color: #f3f1ee;
+  padding: 40px 20px;
+  color: #43372b;
+  font-family: "Urbanist", sans-serif;
 }
 
-@media (max-width: 768px) {
-  .home-container section {
-    padding: 2rem 1rem; /* espaço interno para não ficar grudado */
-  }
-  
-  .content {
-    max-width: 100%; /* ocupar a largura disponível */
-    padding: 0 1rem; /* margem interna nas laterais */
-  }
-
-  .content h3 {
-    font-size: 1.8rem; /* reduz para caber melhor */
-  }
-
-  .content p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+#footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 768px) {
-  .about .row {
-    flex-direction: row; /* mantém lado a lado */
-    flex-wrap: nowrap; /* não quebra linha */
-    max-width: 100%;
-    padding: 1rem;
-    gap: 1rem; /* espaço entre imagem e texto */
-    align-items: center;
+#footer_contects {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo + descrição */
+.footer-logo-desc {
+  text-align: left;
+}
+.footer-logo-desc img {
+  margin-bottom: 10px;
+}
+.footer-logo-desc p {
+  max-width: 250px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Redes sociais */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.footer-social a {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.footer-social a:hover {
+  transform: scale(1.1);
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 10px;
+}
+.footer-links a {
+  color: #43372b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #7a5e46;
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-top: 40px;
+  border-top: 1px solid #dcdcdc;
+  padding-top: 20px;
+}
+
+/* Desktop: layout em 3 colunas */
+@media (min-width: 768px) {
+  #footer_contects {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .footer-logo-desc {
+    text-align: left;
+    flex: 1;
+  }
+
+  .footer-social {
+    flex: 1;
     justify-content: center;
   }
 
-  .about .row .container-img {
-    flex: 0 0 35%; /* a imagem ocupa 35% da largura */
-  }
-
-  .about .row .container-img img {
-    width: 100%; /* a imagem preenche o container dela */
-    height: auto;
-    border-radius: 10px;
-    display: block;
-  }
-
-  .about .row .content-about {
-    flex: 1; /* texto ocupa o restante do espaço */
-    padding: 0;
-  }
-
-  .about .row .content-about h3 {
-    font-size: 1.8rem;
-  }
-
-  .about .row .content-about p {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-}
-
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-  .about .row {
-    flex-direction: column;
-    padding: 20px;
-    max-width: 100%;
-    margin: 20px auto;
-  }
-
-  .about .row .container-img img {
-    width: 100%;
-    height: auto;
-  }
-
-  .about .row .content-about {
-    box-shadow: none;
-    padding: 1rem;
-  }
-
-  .nav a {
-    margin: 0 10px;
-    font-size: 1.2rem;
-  }
-
-  .content h3 {
-    font-size: 1.8rem;
-  }
-
-  .content p {
-    font-size: 1rem;
-  }
-
-  .btn-contato button {
-    padding: 8px 20px;
-    font-size: 1.2rem;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  .img-port {
-    width: 80vw;
-    height: 200px;
+  .footer-links {
+    flex: 1;
+    align-items: flex-end;
   }
 }
 
