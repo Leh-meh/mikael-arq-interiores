@@ -33,13 +33,8 @@
         <a href="#">Home</a>
         <a href="#about">Sobre</a>
         <a href="#project">Projetos</a>
+        <a href="#contact">Contato</a>
       </nav> <!--fim de nav-->
-
-      <div class="btn-contato button">
-        <a href="#">
-          <button>Contato</button>
-        </a>
-      </div> <!--fim de contato-->
 
     </section>
   </header>
@@ -59,6 +54,7 @@
 
   <section class="about" id="about">
     <h2 class="title">Quem <span>sou </span></h2>
+    <p>Conheça um pouco mais sobre mim</p>
     <div class="row">
       <div class="container-img">
         <img src="img/perfil.jpeg" alt="foto-sobre" width="300px" height="400px">
@@ -73,61 +69,111 @@
         <p>Atualmente, à frente do meu próprio escritório, atuo na criação de projetos exclusivos que traduzem a
           identidade de cada cliente. Acredito que um ambiente bem planejado tem o poder de acolher, inspirar e elevar a
           qualidade de vida. Para isso, cada detalhe é pensado com propósito e intenção.</p>
-      </div> <!--fim de content-about-->
+
+      </div> <!--flex-->
+    </div> <!--fim de content-about-->
     </div><!--fim de row-->
   </section>
 
+  <section class="experiencia">
+    <div class="experiencia-box">
+      <h3>3</h3>
+      <p>Anos de experiência</p>
+    </div>
+    <div class="experiencia-box">
+      <h3>9</h3>
+      <p>Projetos concluídos</p>
+    </div>
+    <div class="experiencia-box">
+      <h3>5</h3>
+      <p>Obras concluídas</p>
+    </div>
+  </section> <!--experiencia-->
+
+
   <section class="portifolio" id="project">
     <div class="title">
-      <h2 class="titulo">MEUS <span>PROJETOS</span></h2>
-      <div class="flex">
-        <div class="img-port" style="background-image: url(img/casa-carrossel\ \(1\).png);">
-          <div class="overlay"> </div>
+      <h2 class="titulo">MEU <span>PORTIFÓLIO</span></h2>
+      <p>Conheça alguns dos meus projetos recentes</p>
+     
+      <div class="container-card">
+      <div class="card">
+        <div class="card-img">
+          <img src="img/capa casa.png" alt="capa casa">
         </div>
-        <div class="img-port" style="background-image: url(img/fisiotrapia-carrossel\ \(1\).png);">
-          <div class="overlay"> </div>
+        <div class="card-content">
+          <h3>Projeto 1</h3>
+          <span class="categoria">Design</span>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio temporibus</p>
+          <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:eacb532d-8f40-4c61-8426-5965181b75b5" class="ver-detalhes" target="_blank"> Ver Detalhes →</a>
         </div>
-        <div class="img-port" style="background-image: url(img/loja-carrossel\ \(1\).png);">
-          <div class="overlay"> </div>
+      </div> <!--card-->
+
+      <div class="card">
+        <div class="card-img">
+          <img src="img/capa loja.png" alt="capa loja">
         </div>
-      </div> <!--flex-->
+        <div class="card-content">
+          <h3>Projeto 2</h3>
+          <span class="categoria">Design</span>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio temporibus</p>
+          <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:37e65d28-3826-412d-8c18-f7a1e03a29a6" class="ver-detalhes" target="_blank"> Ver Detalhes →</a>
+        </div>
+      </div> <!--card-->
+
+      <div class="card">
+        <div class="card-img">
+          <img src="img/capa fisioterapia.png" alt="capa fisioterapia">
+        </div>
+        <div class="card-content">
+          <h3>Projeto 3</h3>
+          <span class="categoria">Design</span>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio temporibus</p>
+          <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:bf1ecd8e-a726-4e96-b940-1efb7203c82d" class="ver-detalhes" target="_blank"> Ver Detalhes →</a>
+        </div>
+      </div> <!--card-->
+
+      </div> <!--container-->
     </div> <!--intrface-->
   </section> <!--portifolio-->
 
   <footer>
-  <div class="container">
-    <!-- Coluna 1 - Contato -->
-    <div class="footer-content">
-      <h3>Contato</h3>
-      <p>Email: arquitetomikaelgoes@gmail.com</p>
-      <p>Telefone: +55 11 96841-2005</p>
+    <div class="container">
+      <!-- Coluna 1 - Contato -->
+      <div class="footer-content">
+        <h3>Contato</h3>
+        <p>Email: arquitetomikaelgoes@gmail.com</p>
+        <p>Telefone: +55 11 96841-2005</p>
+      </div>
+
+      <!-- Coluna 2 - Links rápidos -->
+      <div class="footer footer-content">
+        <h3>Links rápidos</h3>
+        <ul class="list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#project">Projetos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 - Redes sociais -->
+      <div class="footer footer-content">
+        <h3>Redes sociais</h3>
+        <ul class="social-icons">
+          <li><a href="https://www.instagram.com/mikaelgoes.arqinteriores" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a href="https://wa.me/message/E43JYRDWFNRRA1" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/mikael-goes-303a43326" target="_blank"><i
+                class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Coluna 2 - Links rápidos -->
-    <div class="footer footer-content">
-      <h3>Links rápidos</h3>
-      <ul class="list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#project">Projetos</a></li>
-      </ul>
+    <div class="bottom-bar">
+      <p>&copy;2025 Mikael Goes | Arquiteto de Interiores. Todos os direitos reservados.</p>
     </div>
-
-    <!-- Coluna 3 - Redes sociais -->
-    <div class="footer footer-content">
-      <h3>Redes sociais</h3>
-      <ul class="social-icons">
-        <li><a href="https://www.instagram.com/mikaelgoes.arqinteriores" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://wa.me/message/E43JYRDWFNRRA1" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/mikael-goes-303a43326" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="bottom-bar">
-    <p>&copy;2025 Mikael Goes | Arquiteto de Interiores. Todos os direitos reservados.</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
 
