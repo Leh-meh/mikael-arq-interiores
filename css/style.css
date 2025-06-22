@@ -126,8 +126,7 @@ section {
 
 .content h3 {
   color: #D6D1DF;
-  font-size: 30px;
-
+  font-size: 30px
 }
 
 .content p {
@@ -149,6 +148,7 @@ section {
   margin-bottom: 1rem;
   text-transform: uppercase;
   /*letra tudo maiúscula*/
+  font-weight: 500;
 
 }
 
@@ -164,7 +164,7 @@ section.about p {
   justify-content: center;
   font-size: 1.5rem;
   text-transform: lowercase;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .about {
@@ -174,8 +174,10 @@ section.about p {
 
 .about .row {
   padding: 30px;
-  max-width: 900px; /* largura máxima do retângulo */
-  margin: 40px auto;  /* centraliza horizontalmente e dá margem vertical */
+  max-width: 900px;
+  /* largura máxima do retângulo */
+  margin: 40px auto;
+  /* centraliza horizontalmente e dá margem vertical */
   align-items: center;
   display: flex;
   background-color: var(--main-color);
@@ -204,7 +206,6 @@ section.about p {
 /*EXPERIÊNCIAS*/
 
 section.experiencia {
-  padding: 40px 4%;
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -215,11 +216,12 @@ section.experiencia .flex {
 }
 
 .experiencia .experiencia-box {
-  padding: 40px;
-  margin-top: 25px;
-  border-radius: 20px;
+  padding: 30px;
+  margin-top: 0.1px;
+  margin-bottom: 20px;
   transition: .2s;
   background-color: #b4a38f23;
+  border-radius: 15px;
 }
 
 .experiencia .experiencia-box:hover {
@@ -228,7 +230,7 @@ section.experiencia .flex {
 }
 
 .experiencia .experiencia-box h3 {
-   display: flex;
+  display: flex;
   justify-content: center;
   font-size: 38px;
   margin: 15px 0;
@@ -236,9 +238,9 @@ section.experiencia .flex {
 }
 
 .experiencia .experiencia-box p {
-  font-size: 18px;
+  font-size: 22px;
   text-transform: lowercase;
-  color: #2C2C2C;
+  color: #2c2c2c86;
 }
 
 /*PROJETOS*/
@@ -246,11 +248,12 @@ section.experiencia .flex {
 section.portifolio {
   padding: 80px 4%;
   box-shadow: 0 0 40px 10px rgba(104, 59, 22, 0.288);
-  margin-top: 180px;
+  margin-top: 100px;
 }
 
 section.portifolio h2 {
   font-size: 4rem;
+  font-weight: 500;
 }
 
 section.portifolio p {
@@ -260,74 +263,167 @@ section.portifolio p {
 }
 
 .container-card {
-  display: flex; /* coloca os filhos em linha */
-  justify-content: center; 
-  gap: 2rem; 
-  flex-wrap: wrap; /* quebra linha no celular */
-  padding: 2rem; /* espaço ao redor */
+  display: flex;
+  /* coloca os filhos em linha */
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* quebra linha no celular */
+  padding: 2rem;
+  /* espaço ao redor */
 }
 
 .card {
-  background-color: #2C2C2C;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* distribui conteúdo e botão */
+  background-color: var(--main-color);
+  color: #351e10;
   border-radius: 1rem;
   overflow: hidden;
   width: 370px;
-  height: 500px; 
+  height: 500px;
   box-shadow: 0 0 20px var(--title);
   transition: transform .2s ease;
   font-family: "Poppins", sans-serif;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* move o card um pouco para cima */
+  transform: translateY(-5px);
+  /* move o card um pouco para cima */
 }
 
-.card-imag {
-  position: relative; /* permite posicionar elementos filhos de forma absoluta */
+.card-img {
+  position: relative;
+  /* permite posicionar elementos filhos de forma absoluta */
 }
 
-.card-imag img {
+.card-img img {
   width: 100%;
-  height: 200px; /* ou 50% do card se quiser metade: height: 50%; */
-  object-fit: cover; /* cobre toda a área sem distorcer */
+  height: 200px;
+  /* ou 50% do card se quiser metade: height: 50%; */
+  object-fit: cover;
+  /* cobre toda a área sem distorcer */
   display: block;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
+
 .card-content {
-  padding: 1.5rem; /* espaço interno */
-    text-align: left;
+  padding: 1.5rem;
+  text-align: left;
+  flex-grow: 1;
+  /* ocupa o espaço disponível */
 }
 
 .card h3 {
-  font-size: 3rem; 
-  font-weight: 700; /* negrito */
+  font-size: 3rem;
+  font-weight: 500;
+  /* negrito */
 }
 
-.card .categoria {
-  color: #4db5ff; 
-  font-size: 1.5rem; 
-  margin-bottom: 0.5rem;
-  display: inline-block; /* permite usar margin */
-}
+
 .card p {
-  font-size: 0.9rem; 
-  line-height: 1.6; /* espaço entre as linhas */
-  color: #ccc; 
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  /* espaço entre as linhas */
+  color: rgba(0, 0, 0, 0.575);
+  padding-top: 0;
 }
 
-  .ver-detalhes {
-    padding: 1.5rem;
-    text-decoration: none; 
-    color: #cd4dff; 
-    font-weight: 500;
-    font-size: 2rem; 
-  }
+.ver-detalhes {
+  text-decoration: none;
+  color: var(--title);
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+  margin-top: auto;
+  /* empurra o botão para o fim */
+}
 
 .ver-detalhes:hover {
-  text-decoration: underline; /* adiciona sublinhado */
+  text-decoration: underline;
+  /* adiciona sublinhado */
+}
+
+/*HABILIDADES*/
+
+
+#habilidades {
+  max-width: 800px;
+  margin: 160px auto 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+#habilidades .title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#habilidades .title h2 {
+  font-size: 38px;
+  color: var(--title);
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+#habilidades .title p {
+  font-size: 18px;
+  color: #2c2c2c86;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.skills-container {
+  padding-top: 20px;
+  max-width: 900px; /* aumenta o container, assim as colunas ficam maiores */
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+
+.skill-item {
+  flex: 0 0 48%;
+  max-width: 48%;
+  padding: 2rem 3rem; 
+  font-size: 1.1rem;  
+  background-color: rgba(255, 255, 255, 0.6);
+  border-left: 5px solid var(--main-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+}
+
+.skill-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 6px 12px rgba(46, 18, 4, 0.24);
+}
+
+.skill-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--title);
+}
+
+.skill-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 
@@ -335,6 +431,7 @@ section.portifolio p {
 
 footer {
   margin: 0;
+  margin-top: 180px;
   padding: 0;
   font-size: 10px;
   background-color: var(--main-color);
