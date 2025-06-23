@@ -11,11 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return sentences.map(sentence => {
       const trimmed = sentence.trim();
 
-      if (trimmed === trimmed.toUpperCase()) {
-        // mantém frases todas em maiúsculo
-        return sentence;
-      }
-
       // primeira letra maiúscula + resto minúsculo
       return sentence.charAt(0).toUpperCase() + sentence.slice(1).toLowerCase();
     }).join(' ');

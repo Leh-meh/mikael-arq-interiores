@@ -67,7 +67,18 @@ section {
 
 .nav {
   display: flex;
-  gap: 4rem;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: nowrap;        /* impede quebra de linha */
+  overflow-x: auto;          /* ativa scroll horizontal */
+  max-width: 100%;           /* não passa da largura da tela */
+  padding: 0 0.5rem;
+  scrollbar-width: none;     /* esconde a barra no Firefox */
+}
+
+/* Esconde scrollbar no Chrome/Safari/Edge */
+.nav::-webkit-scrollbar {
+  display: none;
 }
 
 .nav a {
@@ -106,7 +117,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.336);
+  background-color: rgba(0, 0, 0, 0.466);
   /* sombra preta com transparência */
   z-index: 1;
 }
@@ -130,7 +141,7 @@ section {
 }
 
 .content p {
-  color: #C6BCBF;
+  color: #dfd1d5;
   font-size: 15px;
   font-weight: 400;
   /*grossura das palavras*/
@@ -164,6 +175,7 @@ section.about p {
   justify-content: center;
   font-size: 1.5rem;
   text-transform: lowercase;
+  margin-top: -1rem;
   margin-bottom: 3rem;
 }
 
@@ -209,11 +221,13 @@ section.about p {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  flex-wrap: wrap; /* para responsividade */
+  flex-wrap: wrap;
+  /* para responsividade */
 }
 
 .experiencia .experiencia-box {
-  width: 280px; /* largura fixa para as boxes caberem lado a lado */
+  width: 280px;
+  /* largura fixa para as boxes caberem lado a lado */
   padding: 30px;
   background-color: #b4a38f23;
   border-radius: 15px;
@@ -346,7 +360,7 @@ section.portifolio p {
 /*HABILIDADES*/
 
 
-#habilidades {
+.skill-section {
   max-width: 800px;
   margin: 160px auto 2rem auto;
   padding: 0 1rem;
@@ -354,28 +368,30 @@ section.portifolio p {
   color: #333;
 }
 
-#habilidades .title {
+.title-habilidade {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-#habilidades .title h2 {
-  font-size: 38px;
+.title-habilidade h2 {
+  font-size: 4rem;
   color: var(--title);
   margin: 0 0 10px 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-#habilidades .title p {
-  font-size: 18px;
-  color: #2c2c2c86;
+.title-habilidade p {
+  font-size: 1.5rem;
+  color: #161616e0;
   text-transform: lowercase;
   margin: 0;
+  margin-top: -1rem;
 }
 
 .skills-container {
   padding-top: 20px;
-  max-width: 900px; /* aumenta o container, assim as colunas ficam maiores */
+  max-width: 900px;
+  /* aumenta o container, assim as colunas ficam maiores */
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -387,8 +403,8 @@ section.portifolio p {
 .skill-item {
   flex: 0 0 48%;
   max-width: 48%;
-  padding: 2rem 3rem; 
-  font-size: 1.1rem;  
+  padding: 2rem 3rem;
+  font-size: 1.1rem;
   background-color: rgba(255, 255, 255, 0.6);
   border-left: 5px solid var(--main-color);
   border-radius: 6px;
@@ -423,6 +439,7 @@ section.portifolio p {
 }
 
 /*EDUCAÇÃO*/
+
 .title-education {
   font-size: 2rem;
   color: rgba(0, 0, 0, 0.87);
@@ -445,13 +462,14 @@ section.portifolio p {
 
 .title-education p {
   font-size: 1.5rem;
-  margin-top: 0.5px;
+  margin-top: -1rem;
   color: rgba(0, 0, 0, 0.644);
 }
 
 .education-section {
   width: 100%;
-  max-width: 1400px; /* maior largura para comportar boxes maiores */
+  max-width: 1400px;
+  /* maior largura para comportar boxes maiores */
   margin: 3rem auto;
   margin-top: 15rem;
   padding: 80px 50px;
@@ -462,9 +480,12 @@ section.portifolio p {
 
 .education-container {
   display: flex;
-  gap: 1.5rem; /* espaço entre as boxes */
-  justify-content: center; /* centraliza as boxes no container */
-  flex-wrap: wrap; /* permite quebrar linha em telas menores */
+  gap: 1.5rem;
+  /* espaço entre as boxes */
+  justify-content: center;
+  /* centraliza as boxes no container */
+  flex-wrap: wrap;
+  /* permite quebrar linha em telas menores */
   margin-top: 6rem;
 }
 
@@ -474,8 +495,10 @@ section.portifolio p {
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.164);
-  width: 23%;        /* um pouco mais larga */
-  min-width: 280px;  /* aumentar mínimo para ficar melhor */
+  width: 23%;
+  /* um pouco mais larga */
+  min-width: 280px;
+  /* aumentar mínimo para ficar melhor */
   box-sizing: border-box;
   margin-bottom: 2rem;
 }
@@ -493,17 +516,21 @@ section.portifolio p {
 }
 
 .education-box .status {
-  display: inline-block;        /*  controlar padding e bordas */
+  display: inline-block;
+  /*  controlar padding e bordas */
   font-weight: 600;
   color: white;
   background-color: #92785e;
-  padding: 0.4rem 1rem;         /* espaço interno como botão */
-  border-radius: 20px;          /* bordas arredondadas */
+  padding: 0.4rem 1rem;
+  /* espaço interno como botão */
+  border-radius: 20px;
+  /* bordas arredondadas */
   margin-bottom: 0.8rem;
   font-size: 0.95rem;
   text-align: center;
-  cursor: default;              /* muda para pointer se quiser parecer clicável */
-  box-shadow: 0 2px 6px #2c1f1341; 
+  cursor: default;
+  /* muda para pointer se quiser parecer clicável */
+  box-shadow: 0 2px 6px #2c1f1341;
 }
 
 .nivel {
@@ -514,12 +541,14 @@ section.portifolio p {
 
 .instituicao {
   display: flex;
-  align-items: center; /* alinha verticalmente ícone e texto */
+  align-items: center;
+  /* alinha verticalmente ícone e texto */
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: #222;
-  gap: 0.5rem; /* espaço entre ícone e texto */
+  gap: 0.5rem;
+  /* espaço entre ícone e texto */
 }
 
 .img-universidade {
@@ -531,7 +560,7 @@ section.portifolio p {
 .education-box .descricao {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-   font-weight: 700;
+  font-weight: 700;
   color: #573b1b;
 }
 
@@ -576,7 +605,7 @@ section.portifolio p {
   text-transform: uppercase;
 }
 
-.title-contact h2 span  {
+.title-contact h2 span {
   color: var(--title);
   text-transform: uppercase;
   /*letra tudo maiúscula*/
@@ -584,7 +613,7 @@ section.portifolio p {
 
 .title-contact p {
   font-size: 1.5rem;
-  margin-top: 0.5px;
+  margin-top: -1rem;
   color: rgba(0, 0, 0, 0.644);
 }
 
@@ -629,7 +658,8 @@ section.portifolio p {
 .info-box h3 {
   margin: 0;
   color: #43372b;
-  min-width: 90px; /* espaço mínimo para título */
+  min-width: 90px;
+  /* espaço mínimo para título */
 }
 
 .info-box p {
@@ -654,6 +684,7 @@ section.portifolio p {
   border-top: 1px solid #ddd;
   padding-top: 1rem;
 }
+
 .social-footer h2 {
   color: #43372b;
   font-size: 1.8rem;
@@ -677,22 +708,29 @@ section.portifolio p {
 }
 
 .social-icons-contact i {
-  color: var(--title); /* ou substitua por uma cor fixa como #000 */
+  color: var(--title);
+  /* ou substitua por uma cor fixa como #000 */
   font-size: 25px;
 }
 
 .social-icons-contact i:hover {
-  color: var(--black); /* muda a cor ao passar o mouse */
+  color: var(--black);
+  /* muda a cor ao passar o mouse */
 }
 
 
 .social-icons-contact {
   display: flex;
-  justify-content: flex-start; /* alinha à esquerda */
-  gap: 0.2rem; /* espaçamento entre os ícones */
-  list-style: none; /* tira os marcadores da lista */
-  padding: 0; /* remove padding padrão da ul */
-  margin: 0; /* remove margem padrão da ul */
+  justify-content: flex-start;
+  /* alinha à esquerda */
+  gap: 0.2rem;
+  /* espaçamento entre os ícones */
+  list-style: none;
+  /* tira os marcadores da lista */
+  padding: 0;
+  /* remove padding padrão da ul */
+  margin: 0;
+  /* remove margem padrão da ul */
 }
 
 
@@ -706,9 +744,12 @@ section.portifolio p {
 .social-line {
   border: none;
   height: 3px;
-  width: 100px; /* ou outro valor conforme preferir */
-  margin: 6px 0 16px 0; /* sem auto, para alinhar à esquerda */
-  background: linear-gradient(to right, #5C3B1E, #F5E8D0); /* marrom para bege */
+  width: 100px;
+  /* ou outro valor conforme preferir */
+  margin: 6px 0 16px 0;
+  /* sem auto, para alinhar à esquerda */
+  background: linear-gradient(to right, #5C3B1E, #F5E8D0);
+  /* marrom para bege */
   border-radius: 2px;
 }
 
@@ -727,11 +768,11 @@ section.portifolio p {
 }
 
 .message-container textarea {
-  width: 100%;    
-  max-width: 100%; 
-  box-sizing: border-box; 
-  resize: vertical; 
-  min-height: 150px; 
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 150px;
   font-size: 1.7rem;
   padding: 0.5rem;
   border-radius: 8px;
@@ -739,13 +780,14 @@ section.portifolio p {
 }
 
 .message-container p {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.678);
   font-weight: 500;
   margin: 1px;
   margin-left: 4px;
   margin-top: -4px;
 }
+
 .message-container button {
   align-self: flex-end;
   padding: 0.7rem 1.5rem;
@@ -762,9 +804,10 @@ section.portifolio p {
 .message-container button:hover {
   background-color: #6b583f;
 }
+
 #charCount {
-  font-size: 1.5rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #383838;
   text-align: right;
   margin-bottom: 0.5rem;
   font-family: Arial, sans-serif;
@@ -895,4 +938,302 @@ footer h3 {
   margin: 0;
   font-size: 12px;
   padding: 7px;
+}
+
+
+/*CELULAR*/
+@media screen and (max-width: 740px) {
+ .header {
+    padding: 0.5rem 0; /* remove padding horizontal */
+  }
+
+  .header section {
+    padding-left: 0.2rem;
+    margin-left: 1px;      
+    justify-content: flex-start; /* alinha tudo à esquerda */
+  }
+
+  .logo {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .logo img {
+    width: 40px;
+    display: block;
+  }
+
+  .nav {
+  font-size: 10px;       /* deixa a fonte menor */
+  gap: 0.1pc;              /* reduz espaço entre os links */
+  padding: 0 0.3rem;     /* menos espaço nas laterais */
+}
+  .nav::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+  }
+
+  .nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /*HOME*/
+
+  .home-container {
+    background-size: cover;
+    /* preenche a tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+
+  .home-container section {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5rem 1.5rem 2rem 1.5rem;
+    min-height: 100vh;
+    text-align: left;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-top: 20rem;
+  }
+
+  .content h3 {
+    font-size: 16px;
+    padding-right: 5rem;
+  }
+
+  .content p {
+    font-size: 12px;
+    line-height: 1.6;
+    padding-right: 1rem;
+    color: #b9b4b5;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+
+   /* Sessão Sobre */
+  .about .row {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .container-img img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+   .content-about {
+    max-width: 90%;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .content-about h3 {
+     font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+
+  .content-about p {
+    font-size: 13px;
+  }
+
+  /*EXPERIENCIA*/
+
+   .flex-experiencia {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .experiencia-box {
+    flex: 1 1 30%;
+    min-width: 100px;
+    text-align: center;
+    background-color: #f4f4f4; /* opcional para destaque */
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .experiencia-box h3 {
+    font-size: 20px;
+  }
+
+  .experiencia-box p {
+    font-size: 13px;
+  } 
+  /* PROJETOS */
+   section.portifolio {
+    padding: 40px 2%;
+    margin-top: 50px;
+    box-shadow: none; /* opcional, pra ficar mais leve */
+  }
+
+  section.portifolio h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  section.portifolio p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+ .container-card {
+  display: flex;
+  flex-direction: column; /* empilha as boxes */
+  align-items: center;    /* centraliza as boxes horizontalmente */
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+  .card {
+    width: 100%; /* ocupa toda largura do container */
+    max-width: 350px; /* limite máximo para não esticar demais */
+    height: auto; /* altura automática para se ajustar ao conteúdo */
+    box-shadow: 0 0 10px var(--title);
+  }
+
+  .card-img img {
+    height: 150px; /* imagem menor */
+  }
+
+  .card h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .ver-detalhes {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  /* HABILIDADES */
+     .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem; /* reduz o espaço entre as boxes */
+  }
+
+  .skills-container {
+    gap: 0.8rem; /* reduz o espaço horizontal/vertical geral entre os itens */
+  }
+  
+  .title-habilidade h2 {
+    font-size: 3rem;
+  }
+
+  .title-habilidade p {
+    font-size: 1.2rem;
+  }
+
+  /* EDUCAÇÃO */
+  .education-section {
+    padding: 40px 20px;
+    margin-top: 8rem;
+    box-shadow: none; /* remove sombra para deixar mais leve no mobile */
+  }
+
+  .title-education h2 {
+    font-size: 2.2rem;
+  }
+
+  .title-education p {
+    font-size: 1.1rem;
+  }
+
+  .education-container {
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .education-box {
+    flex: 0 0 48%;
+    max-width: 48%;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .education-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .education-box .descricao,
+  .education-box .habilidades ul,
+  .education-box .status,
+  .education-box .nivel,
+  .education-box .instituicao {
+    font-size: 0.9rem;
+  }
+
+  .education-box .habilidades h4 {
+    font-size: 1rem;
+  }
+
+  .img-universidade {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* RODAPÉ */
+   .container {
+    flex-direction: row;
+    flex-wrap: wrap; /* permite quebra de linha se não couber */
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .footer-content {
+    width: 33.3%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .footer-content h3 {
+    font-size: 16px;
+  }
+
+  .footer-content p {
+    width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px;
+    text-align: left;
+  }
+
+  .list a {
+    font-size: 13px;
+  }
+
+  .social-icons {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .social-icons i {
+    font-size: 20px;
+  }
+
+  .bottom-bar p {
+    font-size: 11px;
+  }
 }
