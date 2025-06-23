@@ -41,3 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
     window.open(whatsappURL, '_blank');
   });
 });
+
+// script.js
+
+window.addEventListener("load", () => {
+  document.body.classList.add("fade-in");
+});

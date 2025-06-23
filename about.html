@@ -21,7 +21,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,454;1,454&display=swap" rel="stylesheet">
   <!--final Link das fontes-->
 </head>
+<style>
+  .logo img {
+  transition: all 0.4s ease;
+}
 
+body {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+</style>
 <body>
 
   <header class="header">
@@ -37,7 +50,6 @@
         <a href="#education">Certificados</a>
         <a href="#contact">Contato</a>
       </nav> <!--fim de nav-->
-
     </section>
   </header>
 
@@ -391,6 +403,7 @@
   </footer>
 
 </body>
+
 <script src="script.js"></script>
 
 </html>

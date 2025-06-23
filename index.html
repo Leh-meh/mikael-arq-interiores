@@ -14,49 +14,64 @@
 
     body {
       height: 100vh;
-      background-color: #997453; /* COR DE FUNDO FIXA */
+      background-color: #997453;
       font-family: 'Arial', sans-serif;
+      overflow: hidden;
     }
 
-    #intro {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
+   #intro {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeOut 2s ease-in-out 3.5s forwards;
+}
     #logo {
       width: 200px;
       opacity: 0;
-      animation: fadeIn 2s ease forwards, moveLogo 2s ease 2s forwards;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    #empresa-nome {
+      margin-top: 1rem;
+      color: rgb(31, 23, 10);
+      font-size: 1.6rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease 1.5s forwards;
+      letter-spacing: 1px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes moveLogo {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
       to {
-        width: 70px;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        transform: none;
+        opacity: 1;
+        transform: translateY(0);
       }
     }
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
   </style>
 </head>
 <body>
 
   <div id="intro">
-    <img id="logo" src="assets/img/logoc.png" alt="Logo de Mikael Goes">
+    <img id="logo" src="img/logoc.png" alt="Logo de Mikael Goes" />
+    <h1 id="empresa-nome">Mikael Goes | Arq. Interiores</h1>
   </div>
 
   <script>
     setTimeout(() => {
       window.location.href = "about.html";
-    }, 4000); // redireciona depois da animação
+    }, 4500); // Redireciona após animações
   </script>
 
 </body>
