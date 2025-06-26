@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById('sendWhatsappBtn');
   const phoneNumber = '5511968412005';
 
+  
+
   function capitalizeSentencesExceptAllCaps(text) {
     const sentences = text.match(/[^.!?]+[.!?]?/g) || [];
 
@@ -46,5 +48,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("load", () => {
   document.body.classList.add("fade-in");
+});
+
+// Detecta a rolagem e ativa o link correspondente
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.offsetHeight;
+
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+      // 🔥 Scroll automático
+      link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    } else {
+      link.classList.remove("active");
+    }
+  });
 });
 

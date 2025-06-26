@@ -109,6 +109,12 @@ html {
   transform: scale(1.1);
 }
 
+.nav a.active {
+  color: var(--main-color); /* ou a cor que você quiser */
+  font-weight: bold;
+  border-bottom: 2px solid var(--main-color); /* opcional */
+}
+
 /*CONTEUDO*/
 
 .home-container {
