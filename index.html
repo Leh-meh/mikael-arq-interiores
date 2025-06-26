@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mikael Goes | arq. interiores</title>
   <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
+  <!--Link das fontes-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -19,14 +25,15 @@
       overflow: hidden;
     }
 
-   #intro {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  animation: fadeOut 2s ease-in-out 3.5s forwards;
-}
+    #intro {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeOut 2s ease-in-out 3.5s forwards;
+    }
+
     #logo {
       width: 200px;
       opacity: 0;
@@ -47,20 +54,35 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #logo {
+        width: 150px;
+      }
+
+      #empresa-nome {
+        font-size: 1.2rem;
+        font-family: "EB Garamond", serif;
+        letter-spacing: 0.1px;
+        color: rgb(65, 55, 39);
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div id="intro">
@@ -75,4 +97,5 @@
   </script>
 
 </body>
+
 </html>

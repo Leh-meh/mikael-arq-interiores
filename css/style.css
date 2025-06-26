@@ -24,6 +24,7 @@
 
 body {
   background-color: var(--bg);
+  overflow-x: hidden; /* Evita rolagem lateral no mobile */
 }
 
 /*CABEÇALHO*/
@@ -1053,46 +1054,198 @@ footer h3 {
   padding: 7px;
 }
 
-/* ====== Footer Mobile ====== */
-@media screen and (max-width: 740px) {
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 10px;
+/*MOBILE*/
+
+@media screen and (max-width: 768px){
+
+  /*CABEÇALHO*/
+  .header {
+    padding: 4px;
+    margin: 0;
+  }
+
+  .logo {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .nav {
+     margin-left: 25px;
+  }
+
+  /*CONTEUDO INICIO*/
+  .home-container url { /*arrumar*/
+    display: none;
+  }
+
+  /*QUEM SOU*/
+
+   .row {
     flex-direction: column;
     align-items: center;
   }
 
-  .footer-content {
+  .container-img img {
     width: 100%;
-    padding: 15px 0;
-    margin-bottom: 20px;
+    max-width: 300px;
+    height: auto;
   }
 
-  footer h3 {
-    font-size: 18px;
+  .content-about {
+    padding: 1rem;
     text-align: center;
   }
 
-  .footer-content p {
-    font-size: 14px;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
+  /*EXPERIENCIA*/
+    .experiencia-box {
+    width: 100px !important;
+    padding: 1rem;
   }
 
-  .social-icons {
+  .experiencia-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .experiencia-box p {
+    font-size: 0.8rem;
+  }
+
+  .flex-experiencia {
+    gap: 1rem;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: nowrap;
   }
 
-  .social-icons img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .bottom-bar p {
-    font-size: 11px;
-  }
+  .flex-experiencia {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* para responsividade */
 }
+ 
+/*PORTIFÓLIO*/
+
+ .portifolio .titulo {
+    font-size: 2.7rem;
+  }
+
+  .portifolio .title span {
+    font-size: 2.7rem;
+  }
+
+  .portifolio p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .card-content h3 {
+    font-size: 2rem;
+  }
+  .card-content p {
+    font-size: 0.1rem;
+  }
+
+  /*HABILIDADES*/
+
+  .title-habilidade h2 {
+    font-size: 2.7rem;
+  }
+
+  .title-habilidade p {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+   .skill-item {
+    width: 160px;
+    padding: 1rem;
+  }
+
+  .skill-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .skill-item p {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 500;
+    overflow: hidden;
+    color: #1f1e1e;
+    text-transform: lowercase;
+  }
+
+  .skills-container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /*CERTIFICAÇÃO*/
+
+  .title-education .title {
+    font-size: 2rem;
+  }
+
+  .title-education .title span {
+    font-size: 2rem;
+  }
+
+  .title-education p {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+  }
+
+  /*CONTATO*/
+  
+   .title-contact h2 {
+    font-size: 2rem;
+  }
+
+  .title-contact h2 span {
+    font-size: 2rem;
+  }
+
+  .title-contact p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+  }
+
+  .info-container p {
+    font-size: 1.4rem;
+  }
+
+  .text-caixa p {
+    font-size: 0.5rem;
+  }
+
+  .message-container p {
+    margin-bottom: 2rem; /* distância maior só no celular */
+  }
+
+  .message-container button {
+    margin-bottom: 2rem;
+  }
+
+  /*FOOTER*/
+  
+   footer .container {
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.footer-content {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.footer-content p,
+.footer-content ul,
+.footer-content h3 {
+  text-align: center;
+  margin: 0 auto;
+}
+} 
+
